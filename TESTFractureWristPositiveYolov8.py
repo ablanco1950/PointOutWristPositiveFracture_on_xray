@@ -96,10 +96,10 @@ def DetectBoneFractureWithYolov8 (img):
        xyxy= result.boxes.xyxy.numpy()
        confidence= result.boxes.conf.numpy()
 
-       print(confidence)
+       #print(confidence)
        
        if len(confidence) == 0: continue
-       if float(confidence[0]) < 0.4: continue
+       #if float(confidence[0]) < 0.4: continue
        class_id= result.boxes.cls.numpy().astype(int)
        print(class_id)
        out_image = img.copy()
