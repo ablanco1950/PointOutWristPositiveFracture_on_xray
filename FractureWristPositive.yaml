@@ -1,0 +1,6 @@
+train: C:\DetectBoneFracture\trainFractureWristPositive/images
+val: C:\DetectBoneFracture\trainFractureWristPositive/images
+
+nc: 1
+names: ['wrist positive']
+
