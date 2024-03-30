@@ -14,7 +14,7 @@ It is tested with the 6 test images
 
 EvaluateTESTFractureWristPositiveYolov8.py
 
-The x-rays appear on the screen, marked with a blue box, the predicted location, and in green, the one that appears on the labels (due to lack of documentation on the labels of the train file, its meaning cannot be specified, although it seems that one is a rude location and the other tighter)
+The x-rays appear on the screen, marked with a blue box, the predicted location with its confidence, and in green, the one that appears on the labels (due to lack of documentation on the labels of the train file, its meaning cannot be specified, although it seems that one is a rude location and the other tighter)
 
 the best model - WristFracture - 2epoch – Stripped.pt
 
