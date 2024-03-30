@@ -25,7 +25,12 @@ TrainFractureWristPositiveYolov8.py
 
 and by the procedure, not at all academic, of testing the best.pt file that is produced in each epoch and saving the one that gives the best results, despite what yolo indicates. The best best.pt, in practice, in PointOutWristPositiveFracture_on_xray\runs\detect\train\weights is saved and its size is reduced using the OptimizerStripped.py program so that it can be uploaded to github.
 
-Note: the trained images have been converted to gray and formatted 640x640. The images to be tested have to be converted to this format to obtain best results
+To test any set of images:
+
+TESTFractureWristPositiveYolov8.py 
+
+which comes prepared to test some images downloaded from https://www.kaggle.com/datasets/vuppalaadithyasairam/bone-fracture-detection-using-xrays that appear in the attached TEST1FractureWristPositive.zip compressed folder.
+Changing the assignment to file on line 12, you can try any image folder
 
 References:
 
@@ -48,3 +53,6 @@ https://universe.roboflow.com/veda/bone-fracture-detection-daoon/model/3
 https://www.kaggle.com/datasets/pkdarabi/bone-fracture-detection-computer-vision-project/code
 
 https://github.com/ultralytics/yolov5/issues/6417
+
+https://www.kaggle.com/datasets/vuppalaadithyasairam/bone-fracture-detection-using-xrays
+
