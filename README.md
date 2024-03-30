@@ -23,7 +23,8 @@ has been obtained through training with:
 TrainFractureWristPositiveYolov8.py
 (The FractureWristPositive.yaml file contains the absolute addresses of the train and valid files, they should be changed to the absolute addresses where they are found in the project)
 
-and by the procedure, not at all academic, of testing the best.pt file that is produced in each epoch and saving the one that gives the best results, despite what yolo indicates. The best best.pt, in practice, in PointOutWristPositiveFracture_on_xray\runs\detect\train\weights is saved and its size is reduced using the OptimizerStripped.py program so that it can be uploaded to github.
+And by the procedure, not at all academic, of testing the best.pt file that is produced in each epoch and saving the one that gives the best results, despite what yolo indicates (The logs with excellent map5O values are attached as txt files, which do not correspond to the results when treating unseen data).
+The best best.pt, in practice (with unseen data), in PointOutWristPositiveFracture_on_xray\runs\detect\train\weights is saved and its size is reduced using the OptimizerStripped.py program so that it can be uploaded to github.
 
 To test any set of images:
 
