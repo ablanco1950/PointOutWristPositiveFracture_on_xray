@@ -101,7 +101,7 @@ def DetectBoneFractureWithYolov8 (img):
        if len(confidence) == 0: continue
        #if float(confidence[0]) < 0.4: continue
        class_id= result.boxes.cls.numpy().astype(int)
-       print(class_id)
+       #print(class_id)
        out_image = img.copy()
        for j in range(len(class_id)):
            con=confidence[j]
@@ -116,7 +116,7 @@ def DetectBoneFractureWithYolov8 (img):
            x.append(int(box[0]))
            xMax.append(int(box[2]))
            #Tabclass_name.append(class_name)
-           print(label)
+           #print(label)
            Tabclass_name.append(label)
             
       
