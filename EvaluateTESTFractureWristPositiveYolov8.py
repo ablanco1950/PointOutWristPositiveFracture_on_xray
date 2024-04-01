@@ -14,7 +14,7 @@ dirnameLabels="testFractureWristPositive\\labels"
 dirnameYolo="best - WristFracture - 2epoch - Stripped.pt"
 #dirnameYolo="stripped_model.pt"
 #dirnameYolo="bestDetectBoneFracture.pt"
-
+#dirnameYolo="C:\\PointOutWristPositiveFracture_on_xray\\runs\\detect\\train2\\weights\\best.pt"
 import cv2
 import time
 Ini=time.time()
@@ -83,7 +83,8 @@ def loadimages(dirname):
                 
                  
                  image = cv2.imread(filepath)
-                                            
+                 #print(filepath)
+                 #print(image.shape)                           
                  images.append(image)
                  TabFileName.append(filename)
                  
@@ -173,7 +174,7 @@ def DetectBoneFractureWithYolov8 (img):
        xyxy= result.boxes.xyxy.numpy()
        confidence= result.boxes.conf.numpy()
        class_id= result.boxes.cls.numpy().astype(int)
-       print(class_id)
+       #print(class_id)
        out_image = img.copy()
        for j in range(len(class_id)):
            con=confidence[j]
@@ -188,7 +189,7 @@ def DetectBoneFractureWithYolov8 (img):
            x.append(int(box[0]))
            xMax.append(int(box[2]))
            #Tabclass_name.append(class_name)
-           print(label)
+           #print(label)
            Tabclass_name.append(label)
             
       
@@ -223,7 +224,7 @@ for i in range (len(imagesComplete)):
             # no se consideran las que no vienen labeladas
             if Labels[i] == "": continue
             gray=imagesComplete[i]
-
+            #print(gray.shape)
 
             imgTrue=imagesComplete[i]
             
@@ -246,7 +247,10 @@ for i in range (len(imagesComplete)):
             # Put text
             text_locationTrue = (int(xMaxTrue),int(yMaxTrue))
             text_colorTrue = (255,255,255)
-            cv2.putText(imgTrue, Labels[i] ,text_locationTrue
+            #cv2.putText(imgTrue, Labels[i] ,text_locationTrue
+            #            , cv2.FONT_HERSHEY_SIMPLEX , 1
+            #            , text_colorTrue, 2 ,cv2.LINE_AA)
+            cv2.putText(imgTrue, "" ,text_locationTrue
                         , cv2.FONT_HERSHEY_SIMPLEX , 1
                         , text_colorTrue, 2 ,cv2.LINE_AA)
             
@@ -255,7 +259,7 @@ for i in range (len(imagesComplete)):
             #cv2.waitKey(0)
             #"""
             #cv2.waitKey(0)
-            print(TabxyxyTrue[i])
+            #print(TabxyxyTrue[i])
             #width, height, x, y, w, h)
             # https://medium.com/thedeephub/yolo-you-only-look-once-a-brief-introduction-2dea897ae9bd
             XcenterYcenterWH=TabxyxyTrue[i].split(" ")
@@ -279,17 +283,19 @@ for i in range (len(imagesComplete)):
             # Put text
             text_locationTrue = (int(xMaxTrue),int(yMaxTrue))
             text_colorTrue = (255,255,255)
-            cv2.putText(imgTrue, Labels[i] ,text_locationTrue
+            #cv2.putText(imgTrue, Labels[i] ,text_locationTrue
+            #            , cv2.FONT_HERSHEY_SIMPLEX , 1
+            #            , text_colorTrue, 2 ,cv2.LINE_AA)
+            cv2.putText(imgTrue, "" ,text_locationTrue
                         , cv2.FONT_HERSHEY_SIMPLEX , 1
                         , text_colorTrue, 2 ,cv2.LINE_AA)
-            
 
             #cv2.imshow('True', imgTrue)
             #cv2.waitKey(0)
 
             #"""
             TabImgSelect, y, yMax, x, xMax, Tabclass_name =DetectBoneFractureWithYolov8(gray)
-            
+            #print(gray.shape)
             if TabImgSelect==[]:
                 print(TabFileName[i] + " NON DETECTED")
                 ContNoDetected=ContNoDetected+1 
@@ -313,17 +319,17 @@ for i in range (len(imagesComplete)):
                 text_location = (x[z], y[z])
                 text_color = (255,255,255)
                 if Tabclass_name[z][:len(Labels[i])] !=Labels[i]:
-                     print(len(Tabclass_name[z]))
-                     print(len(Labels[i]))
+                     #print(len(Tabclass_name[z]))
+                     #print(len(Labels[i]))
                      print("ERROR " + TabFileName[i] + "Predicted "+ Tabclass_name[z] + " true is " + Labels[i])
                      ContError+=1
                 else:
-                     print("HIT " + TabFileName[i] + "Predicted "+ Tabclass_name[z] )
+                     #print("HIT " + TabFileName[i] + "Predicted "+ Tabclass_name[z] )
                      ContHit+=1
-                cv2.putText(img, str(Tabclass_name[z]) ,text_location
+                cv2.putText(img, str(Tabclass_name[z][len(Labels[i]):]) ,text_location
                         , cv2.FONT_HERSHEY_SIMPLEX , 1
                         , text_color, 2 ,cv2.LINE_AA)
-                cv2.putText(gray1, str(Tabclass_name[z]) ,text_location
+                cv2.putText(gray1, str(Tabclass_name[z][len(Labels[i]):]) ,text_location
                         , cv2.FONT_HERSHEY_SIMPLEX , 1
                         , text_color, 2 ,cv2.LINE_AA)
                         
@@ -341,6 +347,6 @@ for i in range (len(imagesComplete)):
 print("")           
 print("NO detected=" + str(ContNoDetected))
 #print("Errors=" + str(ContError))
-print("Hits=" + str(ContHit))
+#print("Hits=" + str(ContHit))
 print("")      
 print( " Time in seconds "+ str(time.time()-Ini))
