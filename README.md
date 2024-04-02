@@ -54,6 +54,8 @@ https://universe.roboflow.com/veda/bone-fracture-detection-daoon/model/3
                              note = { visited on 2024-03-27 },
                              }
 
+https://www.kaggle.com/code/jasonroggy/yolov8/input
+
 https://www.kaggle.com/datasets/pkdarabi/bone-fracture-detection-computer-vision-project/code
 
 https://github.com/ultralytics/yolov5/issues/6417
