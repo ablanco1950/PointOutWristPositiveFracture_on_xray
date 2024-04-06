@@ -58,6 +58,9 @@ https://www.kaggle.com/code/jasonroggy/yolov8/input
 
 https://www.kaggle.com/datasets/pkdarabi/bone-fracture-detection-computer-vision-project/code
 
+https://github.com/ultralytics/ultralytics/issues/3629
+with small dataset is not possible change optimizer neither lr parameter
+
 https://github.com/ultralytics/yolov5/issues/6417
 
 https://www.kaggle.com/datasets/vuppalaadithyasairam/bone-fracture-detection-using-xrays
