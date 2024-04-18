@@ -11,8 +11,10 @@ dir=""
 # from https://www.kaggle.com/datasets/vuppalaadithyasairam/bone-fracture-detection-using-xrays
 dirname= "TEST1FractureWristPositive"
 
-dirnameYolo="best - WristFracture - 2epoch - Stripped.pt"
+#dirnameYolo="best - WristFracture - 2epoch - Stripped.pt"
+#dirnameYolo="best_wrist_fracture_128Batch_10epoch.pt"
 
+dirnameYolo="best_wrist_fracture_64Batch_10epoch.pt"
 
 import cv2
 import time

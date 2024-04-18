@@ -11,10 +11,18 @@ dir=""
 dirname= "testFractureWristPositive\\images"
 dirnameLabels="testFractureWristPositive\\labels"
 
-dirnameYolo="best - WristFracture - 2epoch - Stripped.pt"
+
 #dirnameYolo="stripped_model.pt"
 #dirnameYolo="bestDetectBoneFracture.pt"
-#dirnameYolo="C:\\PointOutWristPositiveFracture_on_xray\\runs\\detect\\train2\\weights\\best.pt"
+#dirnameYolo="C:\\PointOutWristPositiveFracture_on_xray\\runs\\detect\\train2\\weights\\last.pt"
+#dirnameYolo="C:\\PointOutWristPositiveFracture_on_xray\\runs\\detect\\train21\\weights\\last25epoch.pt"
+#dirnameYolo="C:\\PointOutWristPositiveFracture_on_xray\\runs\\detect\\train30\\weights\\best.pt"
+
+#dirnameYolo="best - WristFracture - 2epoch - Stripped.pt"
+#dirnameYolo="best_wrist_fracture_128Batch_10epoch.pt"
+
+dirnameYolo="best_wrist_fracture_64Batch_10epoch.pt"
+
 import cv2
 import time
 Ini=time.time()
