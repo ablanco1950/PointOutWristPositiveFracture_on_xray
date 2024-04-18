@@ -14,7 +14,7 @@ It is tested with the 6 test images
 
 EvaluateTESTFractureWristPositiveYolov8.py
 
-The x-rays appear on the screen, marked with a blue box, the predicted location with its confidence, and in green, the one that appears on the labels (due to lack of documentation on the labels of the train file, its meaning cannot be specified, although it seems that one is a rude location and the other tighter)
+The x-rays appear on the screen, marked with a blue box, the predicted location with its confidence, and in green, the one that appears on the labels.
 
 the attached model:
 
@@ -26,7 +26,7 @@ TrainFractureWristPositiveYolov8.py
 
 (The FractureWristPositive.yaml file contains the absolute addresses of the train and valid files, they should be changed to the absolute addresses where they are found in the project)
 
-The log of he training is attached LOG-TrainFractureWristPositiv_batch64_10epochs.txt
+The log of he training is attached: LOG-TrainFractureWristPositiv_batch64_10epochs.txt
 
 also others models with similar resultas are attached
 
