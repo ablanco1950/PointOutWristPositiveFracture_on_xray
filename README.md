@@ -18,16 +18,23 @@ The x-rays appear on the screen, marked with a blue box, the predicted location 
 
 the attached model:
 
-best model - WristFracture - 2epoch – Stripped.pt
+best_wrist_fracture_64Batch_10epoch.pt
 
 has been obtained through training with:
 
 TrainFractureWristPositiveYolov8.py
+
 (The FractureWristPositive.yaml file contains the absolute addresses of the train and valid files, they should be changed to the absolute addresses where they are found in the project)
 
-And by the procedure, not at all academic, of testing the best.pt file that is produced in each epoch and saving the one that gives the best results, despite what yolo indicates (The logs with excellent map5O values are attached as txt files, which do not correspond to the results when treating unseen data). And I  have found problems changing the hyperparameters of yolo. Transferring records from the train to the valid one so that a 2/3 ratio is met, also does not achieve improvements
+The log of he training is attached LOG-TrainFractureWristPositiv_batch64_10epochs.txt
 
-The best best.pt, in practice (with unseen data), in PointOutWristPositiveFracture_on_xray\runs\detect\trainnn\weights is saved and its size is reduced using the OptimizerStripped.py program so that it can be uploaded to github.
+also others models with similar resultas are attached
+
+best_wrist_fracture_128batch_10epoch.pt ( log LOG-TrainFractureWristPositiv_batch128_10epochs.txt)
+
+and
+
+best model - WristFracture - 2epoch – Stripped.pt
 
 To test any set of images:
 
@@ -35,6 +42,12 @@ TESTFractureWristPositiveYolov8.py
 
 which comes prepared to test some images downloaded from https://www.kaggle.com/datasets/vuppalaadithyasairam/bone-fracture-detection-using-xrays that appear in the attached TEST1FractureWristPositive.zip compressed folder.
 Changing the assignment to file on line 12, you can try any image folder
+
+Comparing with the best model I Know: https://universe.roboflow.com/veda/bone-fracture-detection-daoon 
+that only recognize and point out a wrist fracture in one image in six in testFractureWristPositive/images,  with the program EvaluateTESTFractureWristPositiveYolov8.py ( model best_wrist_fracture_64Batch_10epoch.pt )points out correctly four images and in two detects fracture but no in the same place that the label.
+
+With the program TESTFractureWristPositiveYolov8.py , the seven wrist fractures of images in TEST1FractureWristPositive are pointed out, 
+https://universe.roboflow.com/veda/bone-fracture-detection-daoon don´t recognizes any wrist fractures in images in that folder.
 
 References:
 
@@ -70,4 +83,9 @@ https://github.com/ultralytics/ultralytics/issues/2721
 https://docs.ultralytics.com/es/guides/hyperparameter-tuning/#what-are-hyperparameters
 
 https://github.com/ultralytics/ultralytics/issues/2849
+
+
+
+
+
 
