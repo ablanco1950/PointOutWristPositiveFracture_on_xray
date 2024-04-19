@@ -1,6 +1,6 @@
 # PointOutWristPositiveFracture_on_xray
 
-Indicate the location of wrist fractures in x-rays through training with yolo v8 of roboflow images downloaded from https://www.kaggle.com/datasets/pkdarabi/bone-fracture-detection-computer-vision-project/code
+Indicates the location of wrist fractures in x-rays through training with yolo v8 of roboflow images downloaded from https://www.kaggle.com/datasets/pkdarabi/bone-fracture-detection-computer-vision-project/code
 
 From the archive with the input files, once decompressed, the train, valid and test folders are extracted, placing them in the folder where the project is going to be executed.
 
